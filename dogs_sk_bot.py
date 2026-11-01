@@ -75,14 +75,30 @@ def format_http_proxy(proxy_cfg):
 
 async def get_dogs_price_usd(session) -> float:
     fallback_price = 0.000033
-    url = "https://api.binance.com/api/v3/ticker/price?symbol=DOGSUSDT"
-    try:
-        async with session.get(url, timeout=aiohttp.ClientTimeout(total=4)) as resp:
-            if resp.status == 200:
-                data = await resp.json()
-                return float(data.get("price", fallback_price))
-    except Exception:
-        pass
+    # لیست اندپوینت‌های صرافی‌های مختلف بدون محدودیت آی‌پی دیتاسنتر
+    sources = [
+        {"url": "https://api.mexc.com/api/v3/ticker/price?symbol=DOGSUSDT", "key": "price"},
+        {"url": "https://api.gateio.ws/api/v4/spot/tickers?currency_pair=DOGS_USDT", "key": "last"},
+        {"url": "https://api.binance.com/api/v3/ticker/price?symbol=DOGSUSDT", "key": "price"}
+    ]
+
+    for src in sources:
+        try:
+            async with session.get(src["url"], timeout=aiohttp.ClientTimeout(total=4)) as resp:
+                if resp.status == 200:
+                    data = await resp.json()
+                    if isinstance(data, list) and len(data) > 0:
+                        val = data[0].get(src["key"])
+                    elif isinstance(data, dict):
+                        val = data.get(src["key"])
+                    else:
+                        val = None
+
+                    if val:
+                        return float(val)
+        except Exception:
+            continue
+
     return fallback_price
 
 async def send_telegram_report(session, message_text: str):
