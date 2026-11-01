@@ -1,0 +1,192 @@
+{
+  "Account 1": {
+    "account_name": "Account 1",
+    "tg_id": "7928564136",
+    "is_main_account": true,
+    "referral_applied": true,
+    "mandatory_joined": true,
+    "joined_channels": [],
+    "joined_groups": [],
+    "completed_tasks": [],
+    "joined_targets": [
+      "promotereferralink",
+      "REFXREF2026",
+      "refxrefx",
+      "spamallowed4",
+      "UsdtWatchEarn"
+    ],
+    "daily_completed_date": "2026-11-01",
+    "cached_init_data": "query_id=AAGoSZRYAwAAAKhJlFhtC-ha&user=%7B%22id%22%3A7928564136%2C%22first_name%22%3A%22Ali%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22aaaa4892%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2Fuks67-q42Ya1f-vdScIgNvv22fUhdSkiDah4vHzI0PnrnaxHu1Q793BqQD-MwjlH.svg%22%7D&auth_date=1793495747&signature=-9fJfO0Dlph-24EUHSXblg-NrA6Ie8T3cAFkknhm2Xp5eefJhKAxA8GqhaYuvGEFEh9oZRyznimRLmwq56xwDw&hash=3458d492ad0aedd373f53230ab2033eb7e261c42315cf06a5a137dd33af15194"
+  },
+  "Account 2": {
+    "account_name": "Account 2",
+    "tg_id": "59360676",
+    "is_main_account": false,
+    "referral_applied": true,
+    "mandatory_joined": true,
+    "joined_channels": [],
+    "joined_groups": [],
+    "completed_tasks": [],
+    "joined_targets": [
+      "promotereferralink",
+      "REFXREF2026",
+      "refxrefx",
+      "spamallowed4",
+      "UsdtWatchEarn"
+    ],
+    "daily_completed_date": "2026-11-01",
+    "cached_init_data": "query_id=AAGkxYkDAAAAAKTFiQPTNyvp&user=%7B%22id%22%3A59360676%2C%22first_name%22%3A%22Ali%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22aa4892%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2FrHCwbDuE-JyzE1eK7yFr2wSFcCIMQl7sqlDc4eCNZD8.svg%22%7D&auth_date=1793495750&signature=fEO7KIX1DlqZ1IvnKfh2ZccUtK72LwZSJMpeo6hJ9am-bxl7QQYev0DI7al68fukYSBcmIo8t1T19YLYbKb0BA&hash=884a5298d42b55e4f15feffca91f1f76e0a3270d8fc4e572c494cf3721507f65"
+  },
+  "Account 3": {
+    "account_name": "Account 3",
+    "tg_id": "6989901933",
+    "is_main_account": false,
+    "referral_applied": true,
+    "mandatory_joined": true,
+    "joined_channels": [],
+    "joined_groups": [],
+    "completed_tasks": [],
+    "joined_targets": [
+      "promotereferralink",
+      "REFXREF2026",
+      "refxrefx",
+      "spamallowed4",
+      "UsdtWatchEarn"
+    ],
+    "daily_completed_date": "2026-11-01",
+    "cached_init_data": "query_id=AAFtcKEgAwAAAG1woSClwvol&user=%7B%22id%22%3A6989901933%2C%22first_name%22%3A%22NeoLight_sup%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22NeoLight_sup%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2Frg7R-aqcnIUfSYJcjB537qCbkHa-nSmgbWIwOASOHE1rS1SxlzHDBQiPCsvSOOC2.svg%22%7D&auth_date=1793495753&signature=Lz7EeIiZ_5av0hIi-hmkGK2HIaM4fKS37Gk2neWZmQBZ4R23i8htTCn0Fa_RkCkXzGOSn87g2RE_IIiEI0LUCQ&hash=ce120e0ab1d7a222f8fa76024c145bd1e4f1bfcf03526e4db6be4c474db4d9be"
+  },
+  "Account 4": {
+    "account_name": "Account 4",
+    "tg_id": "5742076116",
+    "is_main_account": false,
+    "referral_applied": true,
+    "mandatory_joined": true,
+    "joined_channels": [],
+    "joined_groups": [],
+    "completed_tasks": [],
+    "joined_targets": [
+      "promotereferralink",
+      "REFXREF2026",
+      "refxrefx",
+      "spamallowed4",
+      "UsdtWatchEarn"
+    ],
+    "daily_completed_date": "2026-11-01",
+    "cached_init_data": "query_id=AAHUIEFWAgAAANQgQVabV1FA&user=%7B%22id%22%3A5742076116%2C%22first_name%22%3A%22Ali%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22aaa4892%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2FAUaJrSenw3r7Ox40BFyHx7wt9OzJs1uS_duETGIQdPh_V8MeCCn5siprBchVrOCN.svg%22%7D&auth_date=1793495755&signature=Rlm3PJStumoPUyb28-a579vaoEpJCwXICCfVsmt1bJF3UBTeRzPxTmIetYln4xVmH2mu_lHhAl4HAEGkOWzNAg&hash=61cc20bc0a880f9bfa2718af24508369bfa56c9df86d2e733773f003b892448e"
+  },
+  "Account 5": {
+    "account_name": "Account 5",
+    "tg_id": "7685423522",
+    "is_main_account": false,
+    "referral_applied": true,
+    "mandatory_joined": true,
+    "joined_channels": [],
+    "joined_groups": [],
+    "completed_tasks": [],
+    "joined_targets": [
+      "promotereferralink",
+      "REFXREF2026",
+      "refxrefx",
+      "spamallowed4",
+      "UsdtWatchEarn"
+    ],
+    "daily_completed_date": "2026-11-01",
+    "cached_init_data": "query_id=AAGiQRZKAwAAAKJBFkqnvo9w&user=%7B%22id%22%3A7685423522%2C%22first_name%22%3A%22Ali%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22aaaaaa4892%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2FlyfWDV-DkM9iiW9LZp-kSdlVWvhWUhnv_4GYNJRshrrP2xRcalNm3PCMzpyoqfvh.svg%22%7D&auth_date=1793496192&signature=_KeL-nMhGQ7nP4esjZt1Sba9b4UE9BERwOMC6F8IzRqJWyjPWtlia0rA02BPwFb6SE2p5SFiwa5cDUWb5QmiAw&hash=da07596d904cc4870d6c4feb1485c15e69b07dc28eeab030c2c600fa0cd701e2"
+  },
+  "Account 6": {
+    "account_name": "Account 6",
+    "tg_id": "42049225",
+    "is_main_account": false,
+    "referral_applied": true,
+    "mandatory_joined": true,
+    "joined_channels": [],
+    "joined_groups": [],
+    "completed_tasks": [],
+    "joined_targets": [
+      "promotereferralink",
+      "REFXREF2026",
+      "refxrefx",
+      "spamallowed4",
+      "UsdtWatchEarn"
+    ],
+    "daily_completed_date": "2026-11-01",
+    "cached_init_data": "query_id=AAHJnoECAAAAAMmegQKdpILC&user=%7B%22id%22%3A42049225%2C%22first_name%22%3A%22%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D9%81%D8%B6%D9%84%22%2C%22last_name%22%3A%22%D8%B4%D8%B1%DB%8C%D9%81%DB%8C%22%2C%22username%22%3A%22sharifi_abolfazl%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2FigPDmu7P5yf_Kez8rOzl5SAmICgVYCzdSp66Zu90OIM.svg%22%7D&auth_date=1793496194&signature=eGQrSnIumNLvBYgM2fvjPmf0EJ9DCRBmkg4iYpRR4bbpb4haaPxT9kS3ZUxjjMLgbqQAaDuyoeOdXA6bWMPaAA&hash=c0216725e72231ee985aea01e00ba46c2dacb570cd4911e4d424820ce6653773"
+  },
+  "Account 7": {
+    "account_name": "Account 7",
+    "tg_id": "8676718947",
+    "is_main_account": false,
+    "referral_applied": true,
+    "mandatory_joined": true,
+    "joined_channels": [],
+    "joined_groups": [],
+    "completed_tasks": [],
+    "joined_targets": [
+      "promotereferralink",
+      "REFXREF2026",
+      "refxrefx",
+      "spamallowed4",
+      "UsdtWatchEarn"
+    ],
+    "daily_completed_date": "2026-11-01",
+    "cached_init_data": "query_id=AAFjOSwFBAAAAGM5LAWaIb_x&user=%7B%22id%22%3A8676718947%2C%22first_name%22%3A%22Msh%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22mh2472%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2F_cL7fPAqew9BpfbsOZTJo3BrvZgMxK1o5vtCTJkaWQn-U8ewe3S-xjPG3b4uXmev.svg%22%7D&auth_date=1793496196&signature=QahL0-NlA1qq8ajDxDoc_KLoDJhi_Mu10ZOdSDLV3cTZRimXlxEatVV_uMFkdVr_ger8nQ1vfong3fDW7IaJBw&hash=c6adaa6059061ff5f85c6f0c2377ebc55bfeace2d588429737723a66d230f548"
+  },
+  "Account 8": {
+    "account_name": "Account 8",
+    "tg_id": "8907196036",
+    "is_main_account": false,
+    "referral_applied": true,
+    "mandatory_joined": true,
+    "joined_channels": [],
+    "joined_groups": [],
+    "completed_tasks": [],
+    "joined_targets": [
+      "promotereferralink",
+      "REFXREF2026",
+      "refxrefx",
+      "spamallowed4",
+      "UsdtWatchEarn"
+    ],
+    "daily_completed_date": "2026-11-01",
+    "cached_init_data": "query_id=AAGEBukSBAAAAIQG6RIBlhvz&user=%7B%22id%22%3A8907196036%2C%22first_name%22%3A%22Abo%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22abo31245%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2Fje4_s8cPidyut7K74q7X5ItitUHh6IqHtO5ruQ8TZEaI9LQc4VaXrghEBKQDS2bQ.svg%22%7D&auth_date=1793496200&signature=BHaEycNY7NFWMLusYkjDQt0m3wPk0F_SIH9ShNIjl4zRq7m_tB8wsY1buksDMkp0p1uHWBxoj2ncWUFmayh1Cg&hash=73a333007f95655e85349f7656fe6c69b796b64b7124421c91e909a1740c63da"
+  },
+  "Account 9": {
+    "account_name": "Account 9",
+    "tg_id": "8686168882",
+    "is_main_account": false,
+    "referral_applied": true,
+    "mandatory_joined": true,
+    "joined_channels": [],
+    "joined_groups": [],
+    "completed_tasks": [],
+    "joined_targets": [
+      "promotereferralink",
+      "REFXREF2026",
+      "refxrefx",
+      "spamallowed4",
+      "UsdtWatchEarn"
+    ],
+    "daily_completed_date": "2026-11-01",
+    "cached_init_data": "query_id=AAEya7wFBAAAADJrvAV319EG&user=%7B%22id%22%3A8686168882%2C%22first_name%22%3A%22Sp%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22Sp18421%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2F7kzz7wRKgYKd90auSeFJQLRtwGedeTage7wQ6dyy-oFqpdK29hQCpHBFiLa4t6F5.svg%22%7D&auth_date=1793496202&signature=aAaRSP1NrCzcqaYREOXuR5pYSsQSeeNbb5GrIH9iG4b2-EArhjx3FHTLspUKw2WR9R5LanYZIX5yOPU0wgJSAg&hash=4dce30102e327d78275ab813617be9d4e9e1dfad733940e21bd8721acd56530c"
+  },
+  "Account 10": {
+    "account_name": "Account 10",
+    "tg_id": "8872006322",
+    "is_main_account": false,
+    "referral_applied": true,
+    "mandatory_joined": true,
+    "joined_channels": [],
+    "joined_groups": [],
+    "completed_tasks": [],
+    "joined_targets": [
+      "promotereferralink",
+      "REFXREF2026",
+      "refxrefx",
+      "spamallowed4",
+      "UsdtWatchEarn"
+    ],
+    "daily_completed_date": "2026-11-01",
+    "cached_init_data": "query_id=AAGyEtAQBAAAALIS0BCyr1wZ&user=%7B%22id%22%3A8872006322%2C%22first_name%22%3A%22Ali%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22Ind16849%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2F3nilB11El9NdfEPP3sCerXUYD60HBlHh00IgVq7h-8alUKMUZhrPo3yzq3e93d4d.svg%22%7D&auth_date=1793496244&signature=4-diGyoBW06rM6ZF2MxiCtlcRpnDGr_RTNs9tM-ExBsrE8idcjEr5Ws3_PGLKNEv1_ah-hqZUM71tGb99X1yDA&hash=99116c5ad445e6fe3b2a845c7c25a822f7dff081b6b1d0ada1b07e05b10fb7dd"
+  }
+}
