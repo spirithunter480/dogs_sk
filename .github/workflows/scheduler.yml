@@ -4,12 +4,11 @@
 name: Dogs SK Bot Runner
 
 on:
-  # قابلیت اجرای دستی از تب Actions گیت‌هاب و تحریک از طریق API (کران‌جاب خارجی)
+  # قابلیت اجرای دستی از تب Actions و تحریک با کران‌جاب cron-job.org
   workflow_dispatch:
 
 # =============================================================================
 # [تنظیم ۲]: قفل هم‌زمانی (Concurrency)
-# تضمین می‌کند در آنِ واحد فقط یک رانر روی این ۱۰ اکانت فعال باشد
 # =============================================================================
 concurrency:
   group: dogs-sk-bot-group
@@ -29,17 +28,33 @@ jobs:
         with:
           python-version: '3.11'
 
+      # ۱. لود کردن خودکار فایل وضعیت از حافظه کش مخفی گیت‌هاب
+      - name: Restore State Cache
+        uses: actions/cache/restore@v4
+        with:
+          path: dogs_sk_state.json
+          key: dogs-sk-state-cache
+          restore-keys: |
+            dogs-sk-state-cache
+
+      # ۲. ایجاد فایل اولیه در صورت اولین اجرای پروژه
+      - name: Ensure state file exists
+        run: |
+          if [ ! -f dogs_sk_state.json ]; then echo "{}" > dogs_sk_state.json; fi
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install telethon aiohttp python-dotenv
 
+      # ۳. ساخت فایل accounts.json از سکرت تعریف‌شده
       - name: Create accounts.json from Secrets
         env:
           ACCOUNTS_JSON: ${{ secrets.ACCOUNTS_JSON }}
         run: |
           echo "$ACCOUNTS_JSON" > accounts.json
 
+      # ۴. اجرای اسکریپت اصلی
       - name: Run bot runner
         env:
           PYTHONUNBUFFERED: "1"
@@ -47,11 +62,10 @@ jobs:
           TG_API_HASH: ${{ secrets.TG_API_HASH }}
         run: python dogs_sk_bot.py
 
-      # کامیت و پوش کردن خودکار آخرین تغییرات dogs_sk_state.json روی ریپازیتوری
-      - name: Commit and push updated state
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add dogs_sk_state.json
-          git commit -m "Update state from workflow run [skip ci]" || echo "No changes to commit"
-          git push
+      # ۵. ذخیره وضعیت جدید dogs_sk_state.json در کش مخفی برای اجرای ۲۰ دقیقه بعد
+      - name: Save State Cache
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: dogs_sk_state.json
+          key: dogs-sk-state-cache
