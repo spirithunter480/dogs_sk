@@ -1,0 +1,57 @@
+# =============================================================================
+# [تنظیم ۱]: نام نمایشی ورک‌فلو
+# =============================================================================
+name: Dogs SK Bot Runner
+
+on:
+  # قابلیت اجرای دستی از تب Actions گیت‌هاب و تحریک از طریق API (کران‌جاب خارجی)
+  workflow_dispatch:
+
+# =============================================================================
+# [تنظیم ۲]: قفل هم‌زمانی (Concurrency)
+# تضمین می‌کند در آنِ واحد فقط یک رانر روی این ۱۰ اکانت فعال باشد
+# =============================================================================
+concurrency:
+  group: dogs-sk-bot-group
+  cancel-in-progress: false
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install telethon aiohttp python-dotenv
+
+      - name: Create accounts.json from Secrets
+        env:
+          ACCOUNTS_JSON: ${{ secrets.ACCOUNTS_JSON }}
+        run: |
+          echo "$ACCOUNTS_JSON" > accounts.json
+
+      - name: Run bot runner
+        env:
+          PYTHONUNBUFFERED: "1"
+          TG_API_ID: ${{ secrets.TG_API_ID }}
+          TG_API_HASH: ${{ secrets.TG_API_HASH }}
+        run: python dogs_sk_bot.py
+
+      # کامیت و پوش کردن خودکار آخرین تغییرات dogs_sk_state.json روی ریپازیتوری
+      - name: Commit and push updated state
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add dogs_sk_state.json
+          git commit -m "Update state from workflow run [skip ci]" || echo "No changes to commit"
+          git push
