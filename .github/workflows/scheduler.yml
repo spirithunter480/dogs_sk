@@ -33,9 +33,9 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: dogs_sk_state.json
-          key: dogs-sk-state-cache
+          key: dogs-sk-state-cache-${{ github.run_id }}
           restore-keys: |
-            dogs-sk-state-cache
+            dogs-sk-state-cache-
 
       # ۲. ایجاد فایل اولیه در صورت اولین اجرای پروژه
       - name: Ensure state file exists
@@ -54,13 +54,13 @@ jobs:
         run: |
           echo "$ACCOUNTS_JSON" > accounts.json
 
-      # ۴. اجرای اسکریپت اصلی
+      # ۴. اجرای اسکریپت اصلی به صورت خط به خط و بدون بافر (-u)
       - name: Run bot runner
         env:
           PYTHONUNBUFFERED: "1"
           TG_API_ID: ${{ secrets.TG_API_ID }}
           TG_API_HASH: ${{ secrets.TG_API_HASH }}
-        run: python dogs_sk_bot.py
+        run: python -u dogs_sk_bot.py
 
       # ۵. ذخیره وضعیت جدید dogs_sk_state.json در کش مخفی برای اجرای ۲۰ دقیقه بعد
       - name: Save State Cache
@@ -68,4 +68,4 @@ jobs:
         if: always()
         with:
           path: dogs_sk_state.json
-          key: dogs-sk-state-cache
+          key: dogs-sk-state-cache-${{ github.run_id }}
