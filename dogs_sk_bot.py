@@ -5,6 +5,7 @@ import time
 import random
 import asyncio
 import aiohttp
+import functools
 import urllib.parse
 from pathlib import Path
 from dotenv import load_dotenv
@@ -13,11 +14,17 @@ from telethon.sessions import StringSession
 from telethon.tl.functions.messages import RequestWebViewRequest
 from telethon.tl.functions.channels import JoinChannelRequest
 
+# چاپ خط به خط و بدون تأخیر در کنسول گیت‌هاب اکشن
+print = functools.partial(print, flush=True)
+
 env_path = Path(__file__).resolve().parent / ".env"
 load_dotenv(dotenv_path=env_path)
 
 API_ID = int(os.getenv("TG_API_ID") or 0)
 API_HASH = os.getenv("TG_API_HASH", "")
+NOTIFIER_BOT_TOKEN = os.getenv("NOTIFIER_BOT_TOKEN", "")
+NOTIFIER_CHAT_ID = os.getenv("NOTIFIER_CHAT_ID", "")
+
 BOT_USERNAME = "dogs_sk_bot"
 MAIN_REF_CODE = "7928564136"
 BASE_APP_URL = "https://dogs-sk-bot.ih0st.app/?tid=2506"
@@ -77,6 +84,26 @@ async def get_dogs_price_usd(session) -> float:
     except Exception:
         pass
     return fallback_price
+
+async def send_telegram_report(session, message_text: str):
+    """ارسال گزارش نهایی به ربات تلگرام"""
+    if not NOTIFIER_BOT_TOKEN or not NOTIFIER_CHAT_ID:
+        return
+    url = f"https://api.telegram.org/bot{NOTIFIER_BOT_TOKEN}/sendMessage"
+    payload = {
+        "chat_id": NOTIFIER_CHAT_ID,
+        "text": message_text,
+        "parse_mode": "Markdown"
+    }
+    try:
+        async with session.post(url, json=payload, timeout=aiohttp.ClientTimeout(total=10)) as resp:
+            if resp.status == 200:
+                print("  [Notifier] Final report successfully sent to Telegram bot.")
+            else:
+                err_text = await resp.text()
+                print(f"  [Notifier Error] Failed to send report: {err_text}")
+    except Exception as e:
+        print(f"  [Notifier Error] Network exception: {e}")
 
 async def get_account_init_data(client, account_name):
     bot_peer = await client.get_input_entity(BOT_USERNAME)
@@ -421,7 +448,7 @@ async def main():
 
             bal, ok = await process_miniapp_tasks(session, init_data, ua, acc_name, acc_state, state, proxy_url)
 
-            # اگر توکن منقضی شده بود، یک بار تلثون را صدا زده و با توکن جدید تکرار می‌کنیم
+            # اگر توکن منقضی شده بود، با Telethon توکن جدید گرفته و مجدداً تلاش می‌کنیم
             if not ok:
                 print(f"  [Token Expired] Refreshing initData for {acc_name}...")
                 client = TelegramClient(StringSession(acc["session"]), API_ID, API_HASH)
@@ -439,18 +466,33 @@ async def main():
             balances_report[acc_name] = bal
             await asyncio.sleep(0.5)
 
-    total_dogs = sum(balances_report.values())
-    total_usd = total_dogs * dogs_price
+        total_dogs = sum(balances_report.values())
+        total_usd = total_dogs * dogs_price
 
-    print("\n==================================================")
-    print(">>> FINAL ACCOUNTS BALANCE REPORT")
-    print("==================================================")
-    for name, bal in balances_report.items():
-        usd_val = bal * dogs_price
-        print(f"• {name:<12}: {bal:>7,} DOGS  (~${usd_val:>6.4f})")
-    print("--------------------------------------------------")
-    print(f"★ TOTAL BALANCE: {total_dogs:>7,} DOGS  (~${total_usd:>6.4f})")
-    print("==================================================")
+        print("\n==================================================")
+        print(">>> FINAL ACCOUNTS BALANCE REPORT")
+        print("==================================================")
+        report_lines = [
+            "🐶 *Dogs SK Automation Report*",
+            f"💵 *DOGS Price:* `${dogs_price:.8f} USD`\n"
+        ]
+
+        for name, bal in balances_report.items():
+            usd_val = bal * dogs_price
+            print(f"• {name:<12}: {bal:>7,} DOGS  (~${usd_val:>6.4f})")
+            report_lines.append(f"• `{name}`: *{bal:,}* DOGS (~`${usd_val:.4f}`)")
+
+        print("--------------------------------------------------")
+        print(f"★ TOTAL BALANCE: {total_dogs:>7,} DOGS  (~${total_usd:>6.4f})")
+        print("==================================================")
+
+        report_lines.append("\n━━━━━━━━━━━━━━━━━━━━")
+        report_lines.append(f"🏆 *Total DOGS:* `{total_dogs:,}`")
+        report_lines.append(f"💰 *Total USD:* `${total_usd:.4f}`")
+        report_lines.append(f"⏰ *Time:* `{time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime())}`")
+
+        # ارسال گزارش نهایی به ربات تلگرام
+        await send_telegram_report(session, "\n".join(report_lines))
 
 if __name__ == "__main__":
     try:
