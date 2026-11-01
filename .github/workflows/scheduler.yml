@@ -60,6 +60,8 @@ jobs:
           PYTHONUNBUFFERED: "1"
           TG_API_ID: ${{ secrets.TG_API_ID }}
           TG_API_HASH: ${{ secrets.TG_API_HASH }}
+          NOTIFIER_BOT_TOKEN: ${{ secrets.NOTIFIER_BOT_TOKEN }}
+          NOTIFIER_CHAT_ID: ${{ secrets.NOTIFIER_CHAT_ID }}
         run: python -u dogs_sk_bot.py
 
       # ۵. ذخیره وضعیت جدید dogs_sk_state.json در کش مخفی برای اجرای ۲۰ دقیقه بعد
